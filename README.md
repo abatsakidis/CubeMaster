@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/hctwkffjvt2wblr1?svg=true)](https://ci.appveyor.com/project/abatsakidis/cubemaster)
+
 ## Description ##
 
 C# Windows Form sample code to call the load calculation web service for container and truck loads
