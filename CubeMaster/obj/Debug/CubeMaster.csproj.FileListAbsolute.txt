@@ -1,0 +1,10 @@
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\bin\Debug\CubeMaster.exe.config
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\bin\Debug\CubeMaster.exe
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\bin\Debug\CubeMaster.pdb
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\obj\Debug\CubeMaster.csprojResolveAssemblyReference.cache
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\obj\Debug\CubeMaster.Properties.Resources.resources
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\obj\Debug\CubeMaster.csproj.GenerateResource.Cache
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\obj\Debug\CubeMaster.csproj.CoreCompileInputs.cache
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\obj\Debug\CubeMaster.exe
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\obj\Debug\CubeMaster.pdb
+C:\Users\mantis\Documents\Visual Studio 2017\Projects\CubeMaster\CubeMaster\obj\Debug\CubeMaster.CubeMaster.resources

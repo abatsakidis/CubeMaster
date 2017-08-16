@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CalculationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CubeMasterWebService" />
+      <xs:element name="GetShipment">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetShipmentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CubeMasterWebService" minOccurs="0" name="GetShipmentResult" nillable="true" type="q1:Shipment" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreatePalletizingRules">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreatePalletizingRulesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CubeMasterWebService" minOccurs="0" name="CreatePalletizingRulesResult" nillable="true" type="q2:PalletizingRules" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Run">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CubeMasterWebService" minOccurs="0" name="tShipment" nillable="true" type="q3:Shipment" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CubeMasterWebService" minOccurs="0" name="tAccount" nillable="true" type="q4:Account" />
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CubeMasterWebService" minOccurs="0" name="tOptions" nillable="true" type="q5:Options" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RunResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CubeMasterWebService" minOccurs="0" name="RunResult" nillable="true" type="q6:LoadPlan" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetReportLink">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CubeMasterWebService" minOccurs="0" name="tAccount" nillable="true" type="q7:Account" />
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CubeMasterWebService" minOccurs="0" name="tOptions" nillable="true" type="q8:Options" />
+            <xs:element minOccurs="0" name="strTitle" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetReportLinkResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CubeMasterWebService" minOccurs="0" name="GetReportLinkResult" nillable="true" type="q9:HyperLink" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CubeMasterWebService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CubeMasterWebService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="Shipment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CargoGroups" nillable="true" type="tns:CargoGroupCollection" />
+          <xs:element minOccurs="0" name="Cargoes" nillable="true" type="tns:CargoCollection" />
+          <xs:element minOccurs="0" name="Containers" nillable="true" type="tns:ContainerCollection" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Information" nillable="true" type="tns:ShipmentInformation" />
+          <xs:element minOccurs="0" name="Rules" nillable="true" type="tns:Rules" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Shipment" nillable="true" type="tns:Shipment" />
+      <xs:complexType name="CargoGroupCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CargoGroup" nillable="true" type="tns:CargoGroup" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CargoGroupCollection" nillable="true" type="tns:CargoGroupCollection" />
+      <xs:complexType name="CargoGroup">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Color" type="xs:long" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxVolumePerContainer" type="xs:double" />
+          <xs:element minOccurs="0" name="MaxWeightPerContainer" type="xs:double" />
+          <xs:element minOccurs="0" name="MixPallet" nillable="true" type="tns:Container" />
+          <xs:element name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CargoGroup" nillable="true" type="tns:CargoGroup" />
+      <xs:complexType name="Container">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CartonType" type="tns:Container.CartonTypeEnum" />
+          <xs:element minOccurs="0" name="Color" type="xs:double" />
+          <xs:element minOccurs="0" name="ContainerType" type="tns:Container.ContainerTypeEnum" />
+          <xs:element minOccurs="0" name="EmptyWeight" type="xs:double" />
+          <xs:element minOccurs="0" name="Height" type="xs:double" />
+          <xs:element minOccurs="0" name="Length" type="xs:double" />
+          <xs:element minOccurs="0" name="MaxCargoTypes" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxHeight" type="xs:double" />
+          <xs:element minOccurs="0" name="MaxVolPercent" type="xs:double" />
+          <xs:element minOccurs="0" name="MaxWeight" type="xs:double" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PalletOvarhangLength" type="xs:double" />
+          <xs:element minOccurs="0" name="PalletOvarhangWidth" type="xs:double" />
+          <xs:element minOccurs="0" name="PalletOverhang" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PalletThickness" type="xs:double" />
+          <xs:element minOccurs="0" name="PalletType" type="tns:Container.PalletTypeEnum" />
+          <xs:element minOccurs="0" name="PalletUnderhang" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PalletUnderhangLength" type="xs:double" />
+          <xs:element minOccurs="0" name="PalletUnderhangWidth" type="xs:double" />
+          <xs:element minOccurs="0" name="Priority" type="xs:int" />
+          <xs:element minOccurs="0" name="Qty" type="xs:long" />
+          <xs:element minOccurs="0" name="VehicleMaxHeight" type="xs:double" />
+          <xs:element minOccurs="0" name="VehicleMaxLength" type="xs:double" />
+          <xs:element minOccurs="0" name="VehicleMaxWidth" type="xs:double" />
+          <xs:element minOccurs="0" name="VehicleType" type="tns:Container.VehicleTypeEnum" />
+          <xs:element minOccurs="0" name="Width" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Container" nillable="true" type="tns:Container" />
+      <xs:simpleType name="Container.CartonTypeEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Tuck">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="TuckWithoutMinorFlap">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="RSC">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="RSCClosed">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="HSC">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Cube">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="TrayHalf">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="ShrinkWrap">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="BottomOpen">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Container.CartonTypeEnum" nillable="true" type="tns:Container.CartonTypeEnum" />
+      <xs:simpleType name="Container.ContainerTypeEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Carton">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Pallet">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="SeaVan">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Truck">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="AirPallet">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Can">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Bottle">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Container.ContainerTypeEnum" nillable="true" type="tns:Container.ContainerTypeEnum" />
+      <xs:simpleType name="Container.PalletTypeEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Wood2WaysDoube">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Wood2WaysSingle">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Wood4Ways">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Paper">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Steel">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Slipsheet">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Plastic2WaysDoube">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">90</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Plastic2WaysSingle">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">91</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Plastic4Ways">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">92</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Bucket">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Container.PalletTypeEnum" nillable="true" type="tns:Container.PalletTypeEnum" />
+      <xs:simpleType name="Container.VehicleTypeEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Dry">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="OpenTop">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="FlatRack">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Container.VehicleTypeEnum" nillable="true" type="tns:Container.VehicleTypeEnum" />
+      <xs:complexType name="CargoCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Cargo" nillable="true" type="tns:Cargo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CargoCollection" nillable="true" type="tns:CargoCollection" />
+      <xs:complexType name="Cargo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Alias2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Color" type="xs:long" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FloorStackSupportsOthers" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FloorStackType" type="tns:Cargo.FloorStackEnum" />
+          <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element name="Height" type="xs:double" />
+          <xs:element name="Length" type="xs:double" />
+          <xs:element minOccurs="0" name="MaxLayersAllowedOverDifferentCargoes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MaxLayersOnOrientation1" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxLayersOnOrientation2" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxLayersOnOrientation3" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxLayersOnOrientation4" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxLayersOnOrientation5" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxLayersOnOrientation6" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxSupportingWeight" type="xs:double" />
+          <xs:element name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderPieces" type="xs:int" />
+          <xs:element minOccurs="0" name="OrientationPriority" nillable="true" type="tns:OrientationPriorityRules" />
+          <xs:element minOccurs="0" name="OrientationsAllowed" type="tns:Cargo.OrientationEnum" />
+          <xs:element minOccurs="0" name="OverhangAllowed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OverhangLength" type="xs:double" />
+          <xs:element minOccurs="0" name="OverhangWidth" type="xs:double" />
+          <xs:element minOccurs="0" name="PalletizedUnitloadsQty" type="xs:int" />
+          <xs:element minOccurs="0" name="Palletizing" nillable="true" type="tns:PalletizingRules" />
+          <xs:element minOccurs="0" name="PieceInside" type="xs:int" />
+          <xs:element minOccurs="0" name="Price" type="xs:double" />
+          <xs:element minOccurs="0" name="Property1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Property10" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Property2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Property3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Property4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Property5" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Property6" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Property7" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Property8" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Property9" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Qty" type="xs:long" />
+          <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+          <xs:element minOccurs="0" name="SetRatio" type="xs:double" />
+          <xs:element minOccurs="0" name="StackValue" type="xs:int" />
+          <xs:element minOccurs="0" name="TurnAllowedOnFloor" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Unitload" nillable="true" type="tns:FilledContainer" />
+          <xs:element minOccurs="0" name="UnitloadBottomPattern" type="xs:int" />
+          <xs:element minOccurs="0" name="UnitloadLayersQtyRotated" type="xs:int" />
+          <xs:element minOccurs="0" name="UnitloadTopPattern" type="xs:int" />
+          <xs:element minOccurs="0" name="Weight" type="xs:double" />
+          <xs:element name="Width" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Cargo" nillable="true" type="tns:Cargo" />
+      <xs:simpleType name="Cargo.FloorStackEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="BestFit">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="BottomOnly">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="NoBottom">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Cargo.FloorStackEnum" nillable="true" type="tns:Cargo.FloorStackEnum" />
+      <xs:complexType name="OrientationPriorityRules">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OrientationNumberNearDoor" type="xs:short" />
+          <xs:element minOccurs="0" name="OrientationNumberPrimary" type="xs:short" />
+          <xs:element minOccurs="0" name="Used" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrientationPriorityRules" nillable="true" type="tns:OrientationPriorityRules" />
+      <xs:simpleType name="Cargo.OrientationEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Orientation1" />
+              <xs:enumeration value="Orientation2" />
+              <xs:enumeration value="Orientation3" />
+              <xs:enumeration value="Orientation4" />
+              <xs:enumeration value="Orientation5" />
+              <xs:enumeration value="Orientation6" />
+              <xs:enumeration value="OrientationsBasic">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="OrientationsAll">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">63</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Orientations34">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Orientations56">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">48</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Orientations3456">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="OrientationsDefault">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Cargo.OrientationEnum" nillable="true" type="tns:Cargo.OrientationEnum" />
+      <xs:complexType name="PalletizingRules">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FlatPalletTop" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Pallet" nillable="true" type="tns:Container" />
+          <xs:element minOccurs="0" name="PartialPalletsAllowed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RemainQtyToMixPallet" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RemainQtyToVehicle" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PalletizingRules" nillable="true" type="tns:PalletizingRules" />
+      <xs:complexType name="FilledContainer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BytesImage3D" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FloorUtilization" type="xs:double" />
+          <xs:element minOccurs="0" name="GrossWeight" type="xs:double" />
+          <xs:element minOccurs="0" name="Height" type="xs:double" />
+          <xs:element minOccurs="0" name="Length" type="xs:double" />
+          <xs:element minOccurs="0" name="LoadFloor" type="xs:double" />
+          <xs:element minOccurs="0" name="LoadPieces" type="xs:long" />
+          <xs:element minOccurs="0" name="LoadQty" type="xs:long" />
+          <xs:element minOccurs="0" name="LoadSize" nillable="true" type="tns:Size" />
+          <xs:element minOccurs="0" name="LoadUnitloads" type="xs:long" />
+          <xs:element minOccurs="0" name="LoadVolume" type="xs:double" />
+          <xs:element minOccurs="0" name="Manifest" nillable="true" type="tns:ManifestLineCollection" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NetWeight" type="xs:double" />
+          <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+          <xs:element minOccurs="0" name="Spaces" nillable="true" type="tns:SpaceInContainerCollection" />
+          <xs:element minOccurs="0" name="VollumeUtilization" type="xs:double" />
+          <xs:element minOccurs="0" name="Width" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FilledContainer" nillable="true" type="tns:FilledContainer" />
+      <xs:complexType name="Size">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Height" type="xs:double" />
+          <xs:element minOccurs="0" name="Length" type="xs:double" />
+          <xs:element minOccurs="0" name="Width" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Size" nillable="true" type="tns:Size" />
+      <xs:complexType name="ManifestLineCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ManifestLine" nillable="true" type="tns:ManifestLine" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ManifestLineCollection" nillable="true" type="tns:ManifestLineCollection" />
+      <xs:complexType name="ManifestLine">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cargo" nillable="true" type="tns:Cargo" />
+          <xs:element minOccurs="0" name="CargoPieces" type="xs:long" />
+          <xs:element minOccurs="0" name="CargoQty" type="xs:long" />
+          <xs:element minOccurs="0" name="PalletizedUnitloadsQty" type="xs:int" />
+          <xs:element minOccurs="0" name="PricePercent" type="xs:double" />
+          <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+          <xs:element minOccurs="0" name="VolPercent" type="xs:double" />
+          <xs:element minOccurs="0" name="WeightPercent" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ManifestLine" nillable="true" type="tns:ManifestLine" />
+      <xs:complexType name="SpaceInContainerCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SpaceInContainer" nillable="true" type="tns:SpaceInContainer" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SpaceInContainerCollection" nillable="true" type="tns:SpaceInContainerCollection" />
+      <xs:complexType name="SpaceInContainer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Arrangement" nillable="true" type="tns:Size" />
+          <xs:element minOccurs="0" name="BytesImage3D" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cargo" nillable="true" type="tns:Cargo" />
+          <xs:element minOccurs="0" name="CargoOrientation" type="tns:Cargo.OrientationEnum" />
+          <xs:element minOccurs="0" name="CargoPieces" type="xs:long" />
+          <xs:element minOccurs="0" name="CargoQty" type="xs:long" />
+          <xs:element minOccurs="0" name="IsEmpty" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsUnitload" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Pos" nillable="true" type="tns:Size" />
+          <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+          <xs:element minOccurs="0" name="Size" nillable="true" type="tns:Size" />
+          <xs:element minOccurs="0" name="VolumeLoaded" type="xs:double" />
+          <xs:element minOccurs="0" name="WeightLoadedGross" type="xs:double" />
+          <xs:element minOccurs="0" name="WeightLoadedNet" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SpaceInContainer" nillable="true" type="tns:SpaceInContainer" />
+      <xs:complexType name="ContainerCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Container" nillable="true" type="tns:Container" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ContainerCollection" nillable="true" type="tns:ContainerCollection" />
+      <xs:complexType name="ShipmentInformation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AWBNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateActual" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateLoadBegin" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateLoadEnd" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateScheduled" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentTerms" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Planner" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ShipmentInformation" nillable="true" type="tns:ShipmentInformation" />
+      <xs:complexType name="Rules">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlgorithmType" type="tns:Rules.AlgorithmTypeEnum" />
+          <xs:element minOccurs="0" name="BestFitContainersSelectionMaxVolUtilThreshold" type="xs:double" />
+          <xs:element minOccurs="0" name="BestFitContainersSelectionMaxWeightUtilThreshold" type="xs:double" />
+          <xs:element minOccurs="0" name="BestFitContainersSelectionType" type="tns:Rules.BestfitContainersSelectionEnum" />
+          <xs:element minOccurs="0" name="CalculationType" type="tns:Rules.CalculationTypeEnum" />
+          <xs:element minOccurs="0" name="FillDirection" type="tns:Rules.FillDirectionEnum" />
+          <xs:element minOccurs="0" name="IsBalanceAppliedToAllSolutions" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsBalanceAppliedToLastSolution" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsBalancePoorUtlizationUnloaded" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsBalanceReplacedWithSmallerSizes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGroupSequenceUsed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGroupUsed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsMultiContainerTypesEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPalletized" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSafeStackingUsed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSameGroupAllowedInDifferentContainers" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSequenceUsed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSpreadIdenticalCargoAllowed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTuned" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsUnitloadFirst" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsWeightLimited" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MaxRunTimeSeconds" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxSearchDepth" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxSearchVolPerncentage" type="xs:double" />
+          <xs:element minOccurs="0" name="MaxUtilizationForBalanceUnload" type="xs:double" />
+          <xs:element minOccurs="0" name="MinSupportRate" type="xs:double" />
+          <xs:element minOccurs="0" name="MixPallet" nillable="true" type="tns:Container" />
+          <xs:element minOccurs="0" name="PalletConfig" nillable="true" type="tns:PalletConfigurationRules" />
+          <xs:element minOccurs="0" name="StackingRule" type="tns:Rules.StackingRuleEnum" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Rules" nillable="true" type="tns:Rules" />
+      <xs:simpleType name="Rules.AlgorithmTypeEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="MaxVolumeFirst" />
+              <xs:enumeration value="Optimization">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Interlocked">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Default">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Rules.AlgorithmTypeEnum" nillable="true" type="tns:Rules.AlgorithmTypeEnum" />
+      <xs:simpleType name="Rules.BestfitContainersSelectionEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="BestfitDisabled">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="BestfitMaxEmptySizeFirst">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="BestfitMaxVolUtilFirst">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="BestfitMaxLoadVolFirst">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="BestfitMaxWeightUtilFirst">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Rules.BestfitContainersSelectionEnum" nillable="true" type="tns:Rules.BestfitContainersSelectionEnum" />
+      <xs:simpleType name="Rules.CalculationTypeEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="MixLoad">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="SetLoadByQuantity">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="SetLoadByVolume">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="UnitLoad">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="MultipleSetLoadByQuantity">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Rules.CalculationTypeEnum" nillable="true" type="tns:Rules.CalculationTypeEnum" />
+      <xs:simpleType name="Rules.FillDirectionEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="FrontToRear">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="BottomToTop" />
+              <xs:enumeration value="ColumnStack">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="LayerStack">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Rules.FillDirectionEnum" nillable="true" type="tns:Rules.FillDirectionEnum" />
+      <xs:complexType name="PalletConfigurationRules">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsMixloadFilledLayersForced" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MinAreaPercentToFormLayer" type="xs:double" />
+          <xs:element minOccurs="0" name="Placed" type="tns:PalletConfigurationRules.PlacemenTypeEnum" />
+          <xs:element minOccurs="0" name="Used" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Utilized" type="tns:PalletConfigurationRules.UtilzationTypeEnum" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PalletConfigurationRules" nillable="true" type="tns:PalletConfigurationRules" />
+      <xs:simpleType name="PalletConfigurationRules.PlacemenTypeEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Block">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Individual">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="PalletConfigurationRules.PlacemenTypeEnum" nillable="true" type="tns:PalletConfigurationRules.PlacemenTypeEnum" />
+      <xs:simpleType name="PalletConfigurationRules.UtilzationTypeEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="VolumeFirst">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="AreaFirst">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="PalletConfigurationRules.UtilzationTypeEnum" nillable="true" type="tns:PalletConfigurationRules.UtilzationTypeEnum" />
+      <xs:simpleType name="Rules.StackingRuleEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="HigherStackValueBottomFirst" />
+              <xs:enumeration value="AllowedTopBottmStackValueSame" />
+              <xs:enumeration value="AllowedTopBottomFootPrintSame">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="HeavierBottomFirst">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="FloorStack">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="FollowStackMatrix">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="AlwaysNotAllowed">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="BestFit">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="AlwaysSingleLayerOnBottom">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Rules.StackingRuleEnum" nillable="true" type="tns:Rules.StackingRuleEnum" />
+      <xs:complexType name="Account">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Account" nillable="true" type="tns:Account" />
+      <xs:complexType name="Options">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CalculationSaved" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CalculationShared" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CargoLoadedFromDatabase" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ContainerLoadedFromDatabase" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GraphicsCreated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GraphicsImageDepth" type="xs:short" />
+          <xs:element minOccurs="0" name="GraphicsImageWidth" type="xs:short" />
+          <xs:element minOccurs="0" name="GraphicsViewType" type="tns:Options.GraphicsViewEnum" />
+          <xs:element minOccurs="0" name="LoadPlanEmpty" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ReportType" type="tns:Options.ReportEnum" />
+          <xs:element minOccurs="0" name="ThumbnailsCreated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ThumbnailsImageDepth" type="xs:short" />
+          <xs:element minOccurs="0" name="ThumbnailsImageWidth" type="xs:short" />
+          <xs:element minOccurs="0" name="UOM" type="tns:Options.UOMEnum" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Options" nillable="true" type="tns:Options" />
+      <xs:simpleType name="Options.GraphicsViewEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="view3DSolid">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view3DSolidWithArrow">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view3DSolidWithSeqLabel">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view3DSolidWithNameLabel">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view3DTransparent">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view3DWeight">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DRight">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DLeft">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DIn">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DOut">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DTop">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DBottom">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DTopLayered">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DTopLayeredFlip">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view3DSolidWithAlias1Label">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view3DSolidWithAlias2Label">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DTopOverlay">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">300</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="view2DSideOverlay">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">301</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Options.GraphicsViewEnum" nillable="true" type="tns:Options.GraphicsViewEnum" />
+      <xs:simpleType name="Options.ReportEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="LoadSummary">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="Solutions">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="LoadingInstruction">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="LoadingDiagram">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="LoadingRequest">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Options.ReportEnum" nillable="true" type="tns:Options.ReportEnum" />
+      <xs:simpleType name="Options.UOMEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="UnitEnglish">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="UnitMetric">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="UnitHighMetric">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="Options.UOMEnum" nillable="true" type="tns:Options.UOMEnum" />
+      <xs:complexType name="LoadPlan">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CalculationError" type="tns:LoadPlan.CalculationErrorEnum" />
+          <xs:element minOccurs="0" name="FilledContainers" nillable="true" type="tns:FilledContainerCollection" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Overview" nillable="true" type="tns:LoadPlan._Overview" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="LoadPlan" nillable="true" type="tns:LoadPlan" />
+      <xs:simpleType name="LoadPlan.CalculationErrorEnum">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="EmptyCargoList">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="CargoWidthLongerThanLength">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="CargoHasZeroLoadCount">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-3</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="CargoHasZeroSetCount">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-7</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="CargoIsTooBig">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-4</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="CargoIsTooSmall">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-10</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="InvalidContainerSize">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-6</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="InvalidCargoSize">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-8</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="EmptyContainerList">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-20</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="InvalidCargoOrientations">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-9</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="NoErrors">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="LockeyNotFound">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="LoadPlan.CalculationErrorEnum" nillable="true" type="tns:LoadPlan.CalculationErrorEnum" />
+      <xs:complexType name="FilledContainerCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FilledContainer" nillable="true" type="tns:FilledContainer" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FilledContainerCollection" nillable="true" type="tns:FilledContainerCollection" />
+      <xs:complexType name="LoadPlan._Overview">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CargoesLeft" type="xs:double" />
+          <xs:element minOccurs="0" name="CargoesLoaded" type="xs:double" />
+          <xs:element minOccurs="0" name="ContainersLoaded" type="xs:double" />
+          <xs:element minOccurs="0" name="PiecesLeft" type="xs:double" />
+          <xs:element minOccurs="0" name="PiecesLoaded" type="xs:double" />
+          <xs:element minOccurs="0" name="PriceLoaded" type="xs:double" />
+          <xs:element minOccurs="0" name="UnitloadsLoaded" type="xs:double" />
+          <xs:element minOccurs="0" name="VolPercentLoaded" type="xs:double" />
+          <xs:element minOccurs="0" name="VolumeLoaded" type="xs:double" />
+          <xs:element minOccurs="0" name="WeightLoaded" type="xs:double" />
+          <xs:element minOccurs="0" name="WeightPercentLoaded" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="LoadPlan._Overview" nillable="true" type="tns:LoadPlan._Overview" />
+      <xs:complexType name="HyperLink">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="HyperLink" nillable="true" type="tns:HyperLink" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ICalculation_GetShipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipment" />
+  </wsdl:message>
+  <wsdl:message name="ICalculation_GetShipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculation_CreatePalletizingRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePalletizingRules" />
+  </wsdl:message>
+  <wsdl:message name="ICalculation_CreatePalletizingRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePalletizingRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculation_Run_InputMessage">
+    <wsdl:part name="parameters" element="tns:Run" />
+  </wsdl:message>
+  <wsdl:message name="ICalculation_Run_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculation_GetReportLink_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportLink" />
+  </wsdl:message>
+  <wsdl:message name="ICalculation_GetReportLink_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportLinkResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICalculation">
+    <wsdl:operation name="GetShipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculation/GetShipment" message="tns:ICalculation_GetShipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculation/GetShipmentResponse" message="tns:ICalculation_GetShipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePalletizingRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculation/CreatePalletizingRules" message="tns:ICalculation_CreatePalletizingRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculation/CreatePalletizingRulesResponse" message="tns:ICalculation_CreatePalletizingRules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Run">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculation/Run" message="tns:ICalculation_Run_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculation/RunResponse" message="tns:ICalculation_Run_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportLink">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculation/GetReportLink" message="tns:ICalculation_GetReportLink_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculation/GetReportLinkResponse" message="tns:ICalculation_GetReportLink_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICalculation" type="tns:ICalculation">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetShipment">
+      <soap:operation soapAction="http://tempuri.org/ICalculation/GetShipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePalletizingRules">
+      <soap:operation soapAction="http://tempuri.org/ICalculation/CreatePalletizingRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Run">
+      <soap:operation soapAction="http://tempuri.org/ICalculation/Run" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportLink">
+      <soap:operation soapAction="http://tempuri.org/ICalculation/GetReportLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculationService">
+    <wsdl:port name="BasicHttpBinding_ICalculation" binding="tns:BasicHttpBinding_ICalculation">
+      <soap:address location="http://e3.cubemaster.net/Calculation.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
