@@ -1,4 +1,5 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/hctwkffjvt2wblr1?svg=true)](https://ci.appveyor.com/project/abatsakidis/cubemaster)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d82f694b06094ad0acac5588bb3dae70)](https://www.codacy.com/app/a.batsakidis/CubeMaster?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=abatsakidis/CubeMaster&amp;utm_campaign=Badge_Grade)
 
 ## Description ##
 
