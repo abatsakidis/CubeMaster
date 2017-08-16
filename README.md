@@ -15,10 +15,10 @@ The web service calculates the load plan from the shipment information and the l
 * Fill in your Account's Settings
 * Fill in your Shipment and cargo's details
 * Click **Calculate** button
-* View your results into your browser
-
+* View your results into your web browser
+<br>
 ![Alt text](/Screenshots/screen1.png?raw=true "CubeMaster")
-
+<br>
 ## Tested on ##
 
 **OS**: Windows 10 x86_64 <br>
