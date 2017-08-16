@@ -17,8 +17,9 @@ The web service calculates the load plan from the shipment information and the l
 * Click **Calculate** button
 * View your results into your web browser
 <br>
+
 ![Alt text](/Screenshots/screen1.png?raw=true "CubeMaster")
-<br>
+
 ## Tested on ##
 
 **OS**: Windows 10 x86_64 <br>
@@ -33,5 +34,4 @@ The web service calculates the load plan from the shipment information and the l
 ## Author ##
 
 Batsakidis Athanasios<br>
-Security Consultant<br>
 a.batsakidis@re-think.gr
