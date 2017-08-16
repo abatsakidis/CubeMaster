@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+## Description ##
 
-You can use the [editor on GitHub](https://github.com/abatsakidis/CubeMaster/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+C# Windows Form sample code to call the load calculation web service for container and truck loads
+<br><br>
+This sample code shows how to pass the shipment information including the size of the 20FT container and the cargo list to the server and take the calculation back from the server. 
+<br><br>
+The web service calculates the load plan from the shipment information and the load plan is sent to your browser after the calculation finishes. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## How To ##
 
-### Markdown
+* First create your CubeMaster account at http://cubemaster.net/
+* Run the application
+* Fill in your Account's Settings
+* Fill in your Shipment and cargo's details
+* Click **Calculate** button
+* View your results into your browser
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![Alt text](/Screenshots/screen1.png?raw=true "CubeMaster")
 
-```markdown
-Syntax highlighted code block
+## Tested on ##
 
-# Header 1
-## Header 2
-### Header 3
+**OS**: Windows 10 x86_64 <br>
+**CPU**: Intel 2 Quad Q6600 (4) @ 2.400GHz <br>
+**Memory**: 4085MiB <br>
 
-- Bulleted
-- List
+## Build ##
 
-1. Numbered
-2. List
+* Use Visual Studio 2017<br>
+* Open application's solution file (CubeMaster.sln)<br>
 
-**Bold** and _Italic_ and `Code` text
+## Author ##
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/abatsakidis/CubeMaster/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Batsakidis Athanasios<br>
+Security Consultant<br>
+a.batsakidis@re-think.gr
